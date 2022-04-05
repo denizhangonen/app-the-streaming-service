@@ -2,8 +2,6 @@ import { ThumbUpIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import React, { forwardRef } from 'react';
 
-import {} from 'react';
-
 interface ThumbnailProps {
   result: any;
 }
@@ -12,7 +10,6 @@ const BASE_URL = 'https://image.tmdb.org/t/p/original/';
 
 const Thumbnail: React.FC<ThumbnailProps> = forwardRef(
   ({ result }, ref: any) => {
-    console.log('result : ', result);
     return (
       <div
         ref={ref}

@@ -13,7 +13,6 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ results }) => {
-  console.log('results:', results);
   return (
     <div>
       <Head>
@@ -35,12 +34,8 @@ const Home: NextPage<HomeProps> = ({ results }) => {
 };
 
 export async function getServerSideProps(context: any) {
-  console.log('context : ', context.query);
   const genre: any = context.query.genre as string;
 
-  console.log('genre:', genre);
-
-  console.log('requests[genre] :', requests[genre]);
   let request: any;
   if (typeof genre === 'string') {
     request = await fetch(
