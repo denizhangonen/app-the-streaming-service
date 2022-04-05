@@ -8,8 +8,12 @@ import Navbar from '../components/Navbar';
 import Results from '../components/Results';
 import requests from '../utils/requests';
 
-const Home: NextPage = (props) => {
-  console.log('props:', props);
+interface HomeProps {
+  results: any;
+}
+
+const Home: NextPage<HomeProps> = ({ results }) => {
+  console.log('results:', results);
   return (
     <div>
       <Head>
@@ -25,7 +29,7 @@ const Home: NextPage = (props) => {
       <Navbar />
 
       {/* Results */}
-      <Results />
+      <Results requests={results} />
     </div>
   );
 };
